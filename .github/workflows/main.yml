@@ -114,10 +114,10 @@ jobs:
 
     - name: Deploy image to Amazon EKS
       run: |
-        kubectl apply -f eks/deployment.yaml
-        kubectl apply -f eks/service.yaml
-        kubectl apply -f eks/kustomization.yaml
-        kubectl apply -f eks/ingress.yaml
+        kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/service.yaml
+        kubectl apply -f k8s/kustomization.yaml
+        kubectl apply -f k8s/ingress.yaml
         
     - name: Create namespace & set in Kustomize
       run: |
