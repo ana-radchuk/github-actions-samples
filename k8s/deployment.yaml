@@ -18,5 +18,5 @@ spec:
        - name: hello-gitops
          image: 560136187067.dkr.ecr.us-east-2.amazonaws.com/hello-gitops:latest
          imagePullPolicy: Always
-          ports:
+         ports:
            - containerPort: 8050
