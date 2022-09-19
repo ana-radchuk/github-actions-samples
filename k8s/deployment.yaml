@@ -20,3 +20,10 @@ spec:
           ports:
             - name: http
               containerPort: 8050
+              
+        - name: hello-gitops
+          image: 560136187067.dkr.ecr.us-east-2.amazonaws.com/hello-gitops:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          imagePullPolicy: Always
