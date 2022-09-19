@@ -113,9 +113,9 @@ jobs:
     - name: Update kube config
       run: aws eks update-kubeconfig --name hello-gitops --region us-east-2
       
-    - name: Deploy image to Amazon EKS
-      run: |
-        kubectl apply -k k8s/
+  #  - name: Deploy image to Amazon EKS
+   #  run: |
+     #   kubectl apply -k k8s/
         
     - name: Create namespace & set in Kustomize
       run: |
