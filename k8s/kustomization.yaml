@@ -8,4 +8,4 @@ namespace: hello-gitops
 images:
 - name: hello-gitops
   newName: merteuil67/hello-gitops
-  newTag: 0ee5b18bbdfc4aa9750bd55be36b36529431a7c2
+  newTag: 492a53aa184e8b9edfd3c588d8a3eb2346bb6f8c
