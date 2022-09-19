@@ -1,15 +1,30 @@
 apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: k8s.io/ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-gitops
+  name: hello-gitops-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: hello-gitops
-                port: 
-                  number: 80
+  - host: "api.hello-gitops.org"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: hello-gitops-api-service
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - api.hello-gitops.org
+    secretName: hello-gitops-api-cert
